@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Octokit;
@@ -27,46 +27,42 @@ namespace GitHubProfileLoader
             }
             else
             {
-                clearInput(2);
+                input = txtUserInput.Text;
+                clearInput(false);
                 readUserInfo();
             }
         }
 
         private void btnClearInput_Click(object sender, EventArgs e)
         {
-            clearInput(1);
+            clearInput(true);
         }
 
-        private void clearInput(int choice)
+        private void clearInput(bool choice)
         {
             switch (choice) {
-                case 1:
+                case true:
                     txtUserInput.Text = "";
-                    lblUserFollowers.Text = "User Followers: ";
-                    lblUsersFollowing.Text = "Users Following: ";
-                    lblUserName.Text = "Username: ";
-                    lblStatus.Text = "Status: Ready";
-                    pboxAvatar.Image = null;
-                    GC.Collect();
-                    break;
-                case 2:
-                    lblUserFollowers.Text = "User Followers: ";
-                    lblUsersFollowing.Text = "Users Following: ";
-                    lblUserName.Text = "Username: ";
-                    lblStatus.Text = "Status: Ready";
-                    pboxAvatar.Image = null;
-                    GC.Collect();
                     break;
             }
+            lblFullName.Text = "Full Name: ";
+            lblUserFollowers.Text = "User Followers: ";
+            lblUsersFollowing.Text = "Users Following: ";
+            lblUserName.Text = "Username: ";
+            lblStatus.Text = "Status: Ready";
+            pboxAvatar.Image = null;
+            btnLoadUserInfo.Enabled = true;
+            GC.Collect();
         }
 
         private async void readUserInfo()
         {
             try
             {
-                var github = new GitHubClient(new ProductHeaderValue("GHubProfileLoader"));
+                var github = new GitHubClient(new ProductHeaderValue("GitHubProfileLoader"));
                 var user = await github.User.Get(input);
                 pboxAvatar.Load(user.AvatarUrl);
+                lblFullName.Text += user.Name;
                 lblUserName.Text += txtUserInput.Text;
                 lblUserFollowers.Text += user.Followers;
                 lblUsersFollowing.Text += user.Following;
