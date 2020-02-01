@@ -1,4 +1,4 @@
-﻿namespace GitHubProfileLoader
+namespace GitHubProfileLoader
 {
     partial class frmGitHubProfileLoader
     {
@@ -62,7 +62,7 @@
             this.pboxAvatar.Location = new System.Drawing.Point(28, 36);
             this.pboxAvatar.Name = "pboxAvatar";
             this.pboxAvatar.Size = new System.Drawing.Size(156, 154);
-            this.pboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pboxAvatar.TabIndex = 1;
             this.pboxAvatar.TabStop = false;
             // 
@@ -110,7 +110,6 @@
             // 
             this.txtUserInput.Location = new System.Drawing.Point(291, 228);
             this.txtUserInput.Name = "txtUserInput";
-            this.txtUserInput.ReadOnly = true;
             this.txtUserInput.Size = new System.Drawing.Size(140, 22);
             this.txtUserInput.TabIndex = 6;
             // 
@@ -148,11 +147,11 @@
             // 
             this.lblProfileURLPrompt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileURLPrompt.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblProfileURLPrompt.Location = new System.Drawing.Point(51, 7);
+            this.lblProfileURLPrompt.Location = new System.Drawing.Point(40, 7);
             this.lblProfileURLPrompt.Name = "lblProfileURLPrompt";
-            this.lblProfileURLPrompt.Size = new System.Drawing.Size(113, 26);
+            this.lblProfileURLPrompt.Size = new System.Drawing.Size(133, 26);
             this.lblProfileURLPrompt.TabIndex = 10;
-            this.lblProfileURLPrompt.Text = "Profile URL";
+            this.lblProfileURLPrompt.Text = "Profile Picture";
             // 
             // lblStatus
             // 
@@ -182,7 +181,7 @@
             this.lblFullName.Name = "lblFullName";
             this.lblFullName.Size = new System.Drawing.Size(266, 26);
             this.lblFullName.TabIndex = 13;
-            this.lblFullName.Text = "Full Name:";
+            this.lblFullName.Text = "Full Name: ";
             // 
             // frmGitHubProfileLoader
             // 
@@ -233,4 +232,3 @@
         private System.Windows.Forms.Label lblFullName;
     }
 }
-
