@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Octokit;
@@ -9,6 +11,8 @@ namespace GitHubProfileLoader
     {
 
         string input = "";
+        string repoInput = "";
+
         public frmGitHubProfileLoader()
         {
             InitializeComponent();
@@ -50,15 +54,17 @@ namespace GitHubProfileLoader
             lblUsersFollowing.Text = "Users Following: ";
             lblUserName.Text = "Username: ";
             lblStatus.Text = "Status: Ready";
+            lblOwnedRepositories.Text = "Public Repos: ";
             pboxAvatar.Image = null;
             btnLoadUserInfo.Enabled = true;
+            btnLoadUserInfo.Text = "Load User Info";
             GC.Collect();
         }
 
         private async void readUserInfo()
         {
-            try
-            {
+           try
+           {
                 var github = new GitHubClient(new ProductHeaderValue("GitHubProfileLoader"));
                 var user = await github.User.Get(input);
                 pboxAvatar.Load(user.AvatarUrl);
@@ -66,30 +72,23 @@ namespace GitHubProfileLoader
                 lblUserName.Text += txtUserInput.Text;
                 lblUserFollowers.Text += user.Followers;
                 lblUsersFollowing.Text += user.Following;
+                lblOwnedRepositories.Text += user.PublicRepos;
                 lblStatus.Text = "Status: Loaded!";
                 user = null;
                 github = null;
                 GC.Collect();
                 btnLoadUserInfo.Enabled = false;
                 btnLoadUserInfo.Text = "Clear Input First";
+           }
+           catch (Octokit.NotFoundException)
+           {
+               MessageBox.Show("That is not a valid user, please try again", "Error");
+               GC.Collect();
             }
-            catch (Exception)
-            {
-                MessageBox.Show("That is not a valid user, please try again", "Error");
-            }
-        }
-
-        private void btnEnterUsername_Click(object sender, EventArgs e)
-        {
-            input = Microsoft.VisualBasic.Interaction.InputBox("What is the username you want to add?", "Add Username");
-            if (input.Equals(""))
-            {
-                MessageBox.Show("Please enter a user name to look up", "Error");
-            }
-            else
-            {
-                txtUserInput.Text = input;
-            }
+           catch (Exception)
+           {
+               MessageBox.Show("There was an error running this program (Likely rate limits from API calls)", "Error");
+           }
         }
     }
 }
