@@ -50,16 +50,16 @@ namespace GitHubProfileLoader
             // 
             this.lblUserName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserName.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUserName.Location = new System.Drawing.Point(202, 67);
+            this.lblUserName.Location = new System.Drawing.Point(194, 67);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(266, 26);
+            this.lblUserName.Size = new System.Drawing.Size(338, 26);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "Username:";
             // 
             // pboxAvatar
             // 
             this.pboxAvatar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pboxAvatar.Location = new System.Drawing.Point(28, 36);
+            this.pboxAvatar.Location = new System.Drawing.Point(20, 36);
             this.pboxAvatar.Name = "pboxAvatar";
             this.pboxAvatar.Size = new System.Drawing.Size(156, 154);
             this.pboxAvatar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -70,9 +70,9 @@ namespace GitHubProfileLoader
             // 
             this.lblUserFollowers.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUserFollowers.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUserFollowers.Location = new System.Drawing.Point(202, 101);
+            this.lblUserFollowers.Location = new System.Drawing.Point(194, 101);
             this.lblUserFollowers.Name = "lblUserFollowers";
-            this.lblUserFollowers.Size = new System.Drawing.Size(266, 26);
+            this.lblUserFollowers.Size = new System.Drawing.Size(338, 26);
             this.lblUserFollowers.TabIndex = 2;
             this.lblUserFollowers.Text = "User Followers:";
             // 
@@ -80,15 +80,15 @@ namespace GitHubProfileLoader
             // 
             this.lblUsersFollowing.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsersFollowing.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUsersFollowing.Location = new System.Drawing.Point(202, 134);
+            this.lblUsersFollowing.Location = new System.Drawing.Point(194, 134);
             this.lblUsersFollowing.Name = "lblUsersFollowing";
-            this.lblUsersFollowing.Size = new System.Drawing.Size(266, 26);
+            this.lblUsersFollowing.Size = new System.Drawing.Size(338, 26);
             this.lblUsersFollowing.TabIndex = 3;
             this.lblUsersFollowing.Text = "Users Following:";
             // 
             // btnLoadUserInfo
             // 
-            this.btnLoadUserInfo.Location = new System.Drawing.Point(41, 227);
+            this.btnLoadUserInfo.Location = new System.Drawing.Point(87, 227);
             this.btnLoadUserInfo.Name = "btnLoadUserInfo";
             this.btnLoadUserInfo.Size = new System.Drawing.Size(136, 26);
             this.btnLoadUserInfo.TabIndex = 4;
@@ -100,7 +100,7 @@ namespace GitHubProfileLoader
             // 
             this.lblUtilityCommands.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUtilityCommands.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblUtilityCommands.Location = new System.Drawing.Point(16, 198);
+            this.lblUtilityCommands.Location = new System.Drawing.Point(62, 198);
             this.lblUtilityCommands.Name = "lblUtilityCommands";
             this.lblUtilityCommands.Size = new System.Drawing.Size(190, 26);
             this.lblUtilityCommands.TabIndex = 5;
@@ -108,7 +108,7 @@ namespace GitHubProfileLoader
             // 
             // txtUserInput
             // 
-            this.txtUserInput.Location = new System.Drawing.Point(291, 228);
+            this.txtUserInput.Location = new System.Drawing.Point(337, 228);
             this.txtUserInput.Name = "txtUserInput";
             this.txtUserInput.Size = new System.Drawing.Size(140, 22);
             this.txtUserInput.TabIndex = 6;
@@ -117,7 +117,7 @@ namespace GitHubProfileLoader
             // 
             this.lblParameters.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblParameters.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblParameters.Location = new System.Drawing.Point(247, 198);
+            this.lblParameters.Location = new System.Drawing.Point(293, 198);
             this.lblParameters.Name = "lblParameters";
             this.lblParameters.Size = new System.Drawing.Size(184, 26);
             this.lblParameters.TabIndex = 7;
@@ -127,7 +127,7 @@ namespace GitHubProfileLoader
             // 
             this.label4.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.Control;
-            this.label4.Location = new System.Drawing.Point(236, 225);
+            this.label4.Location = new System.Drawing.Point(282, 225);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 26);
             this.label4.TabIndex = 8;
@@ -135,7 +135,7 @@ namespace GitHubProfileLoader
             // 
             // btnClearInput
             // 
-            this.btnClearInput.Location = new System.Drawing.Point(41, 255);
+            this.btnClearInput.Location = new System.Drawing.Point(87, 255);
             this.btnClearInput.Name = "btnClearInput";
             this.btnClearInput.Size = new System.Drawing.Size(136, 26);
             this.btnClearInput.TabIndex = 9;
@@ -147,7 +147,7 @@ namespace GitHubProfileLoader
             // 
             this.lblProfileURLPrompt.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProfileURLPrompt.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblProfileURLPrompt.Location = new System.Drawing.Point(40, 7);
+            this.lblProfileURLPrompt.Location = new System.Drawing.Point(32, 7);
             this.lblProfileURLPrompt.Name = "lblProfileURLPrompt";
             this.lblProfileURLPrompt.Size = new System.Drawing.Size(133, 26);
             this.lblProfileURLPrompt.TabIndex = 10;
@@ -157,7 +157,7 @@ namespace GitHubProfileLoader
             // 
             this.lblStatus.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblStatus.Location = new System.Drawing.Point(250, 7);
+            this.lblStatus.Location = new System.Drawing.Point(288, 7);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(150, 26);
             this.lblStatus.TabIndex = 11;
@@ -165,7 +165,7 @@ namespace GitHubProfileLoader
             // 
             // btnEnterUsername
             // 
-            this.btnEnterUsername.Location = new System.Drawing.Point(268, 255);
+            this.btnEnterUsername.Location = new System.Drawing.Point(314, 255);
             this.btnEnterUsername.Name = "btnEnterUsername";
             this.btnEnterUsername.Size = new System.Drawing.Size(136, 26);
             this.btnEnterUsername.TabIndex = 12;
@@ -177,9 +177,9 @@ namespace GitHubProfileLoader
             // 
             this.lblFullName.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFullName.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFullName.Location = new System.Drawing.Point(202, 36);
+            this.lblFullName.Location = new System.Drawing.Point(194, 36);
             this.lblFullName.Name = "lblFullName";
-            this.lblFullName.Size = new System.Drawing.Size(266, 26);
+            this.lblFullName.Size = new System.Drawing.Size(338, 26);
             this.lblFullName.TabIndex = 13;
             this.lblFullName.Text = "Full Name: ";
             // 
@@ -188,7 +188,7 @@ namespace GitHubProfileLoader
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.ClientSize = new System.Drawing.Size(471, 293);
+            this.ClientSize = new System.Drawing.Size(544, 293);
             this.Controls.Add(this.lblFullName);
             this.Controls.Add(this.btnEnterUsername);
             this.Controls.Add(this.lblStatus);
