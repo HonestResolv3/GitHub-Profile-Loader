@@ -32,23 +32,18 @@ namespace GitHubProfileLoader
             else
             {
                 input = txtUserInput.Text;
-                clearInput(false);
+                clearInput();
                 readUserInfo();
             }
         }
 
         private void btnClearInput_Click(object sender, EventArgs e)
         {
-            clearInput(true);
+            clearInput();
         }
 
-        private void clearInput(bool clearTextAsWell)
+        private void clearInput()
         {
-            switch (clearTextAsWell) {
-                case true:
-                    txtUserInput.Text = "";
-                    break;
-            }
             lblFullName.Text = "Full Name: ";
             lblUserFollowers.Text = "User Followers: ";
             lblUsersFollowing.Text = "Users Following: ";
