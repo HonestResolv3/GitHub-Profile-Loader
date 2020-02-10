@@ -42,9 +42,9 @@ namespace GitHubProfileLoader
             clearInput(true);
         }
 
-        private void clearInput(bool choice)
+        private void clearInput(bool clearTextAsWell)
         {
-            switch (choice) {
+            switch (clearTextAsWell) {
                 case true:
                     txtUserInput.Text = "";
                     break;
@@ -84,10 +84,14 @@ namespace GitHubProfileLoader
            {
                MessageBox.Show("That is not a valid user, please try again", "Error");
                GC.Collect();
-            }
+           }
+           catch (Octokit.AbuseException)
+           {
+               MessageBox.Show("There was an error running this program (API call abuse)", "Error");
+           }
            catch (Exception)
            {
-               MessageBox.Show("There was an error running this program (Likely rate limits from API calls)", "Error");
+                MessageBox.Show("There was an error running this program (Can be API call abuse)", "Error");
            }
         }
     }
