@@ -79,6 +79,11 @@ namespace GitHubProfileLoader
                 GC.Collect();
                 btnLoadUserInfo.Enabled = false;
                 btnLoadUserInfo.Text = "Clear Input First";
+                if (lblFullName.Text.Equals("Full Name: "))
+                {
+                    lblFullName.Text = "Full Name: N/A";
+                }
+
            }
            catch (Octokit.NotFoundException)
            {
@@ -88,11 +93,13 @@ namespace GitHubProfileLoader
            catch (Octokit.AbuseException)
            {
                MessageBox.Show("There was an error running this program (API call abuse)", "Error");
-           }
+                GC.Collect();
+            }
            catch (Exception)
            {
                 MessageBox.Show("There was an error running this program (Can be API call abuse)", "Error");
-           }
+                GC.Collect();
+            }
         }
     }
 }
