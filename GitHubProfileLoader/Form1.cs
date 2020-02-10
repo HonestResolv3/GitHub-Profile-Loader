@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 using Octokit;
@@ -9,6 +11,8 @@ namespace GitHubProfileLoader
     {
 
         string input = "";
+        string repoInput = "";
+
         public frmGitHubProfileLoader()
         {
             InitializeComponent();
@@ -28,37 +32,34 @@ namespace GitHubProfileLoader
             else
             {
                 input = txtUserInput.Text;
-                clearInput(false);
+                clearInput();
                 readUserInfo();
             }
         }
 
         private void btnClearInput_Click(object sender, EventArgs e)
         {
-            clearInput(true);
+            clearInput();
         }
 
-        private void clearInput(bool choice)
+        private void clearInput()
         {
-            switch (choice) {
-                case true:
-                    txtUserInput.Text = "";
-                    break;
-            }
             lblFullName.Text = "Full Name: ";
             lblUserFollowers.Text = "User Followers: ";
             lblUsersFollowing.Text = "Users Following: ";
             lblUserName.Text = "Username: ";
             lblStatus.Text = "Status: Ready";
+            lblOwnedRepositories.Text = "Public Repos: ";
             pboxAvatar.Image = null;
             btnLoadUserInfo.Enabled = true;
+            btnLoadUserInfo.Text = "Load User Info";
             GC.Collect();
         }
 
         private async void readUserInfo()
         {
-            try
-            {
+           try
+           {
                 var github = new GitHubClient(new ProductHeaderValue("GitHubProfileLoader"));
                 var user = await github.User.Get(input);
                 pboxAvatar.Load(user.AvatarUrl);
@@ -66,29 +67,33 @@ namespace GitHubProfileLoader
                 lblUserName.Text += txtUserInput.Text;
                 lblUserFollowers.Text += user.Followers;
                 lblUsersFollowing.Text += user.Following;
+                lblOwnedRepositories.Text += user.PublicRepos;
                 lblStatus.Text = "Status: Loaded!";
                 user = null;
                 github = null;
                 GC.Collect();
                 btnLoadUserInfo.Enabled = false;
                 btnLoadUserInfo.Text = "Clear Input First";
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("That is not a valid user, please try again", "Error");
-            }
-        }
+                if (lblFullName.Text.Equals("Full Name: "))
+                {
+                    lblFullName.Text = "Full Name: N/A";
+                }
 
-        private void btnEnterUsername_Click(object sender, EventArgs e)
-        {
-            input = Microsoft.VisualBasic.Interaction.InputBox("What is the username you want to add?", "Add Username");
-            if (input.Equals(""))
-            {
-                MessageBox.Show("Please enter a user name to look up", "Error");
+           }
+           catch (Octokit.NotFoundException)
+           {
+               MessageBox.Show("That is not a valid user, please try again", "Error");
+               GC.Collect();
+           }
+           catch (Octokit.AbuseException)
+           {
+               MessageBox.Show("There was an error running this program (API call abuse)", "Error");
+                GC.Collect();
             }
-            else
-            {
-                txtUserInput.Text = input;
+           catch (Exception)
+           {
+                MessageBox.Show("There was an error running this program (Can be API call abuse)", "Error");
+                GC.Collect();
             }
         }
     }
